@@ -13,18 +13,46 @@ body {
     
     
   }
+  header h1{
+    text-align: center;
+  }
   header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 10%;
+    height: 14%;
     background-color:rgb(248, 236, 164);
-    display: flex;
+    
     align-items: center;
     justify-content: center;
     font-family:'Times New Roman', Times, serif;
     color: black;
+   
+
+  }
+  header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  header li {
+    float: left;
+  }
+  
+  header li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  header li a:hover {
+    background-color: #111;
   }
   
   
