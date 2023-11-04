@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+        .invoice-info-box {
+          background-color: #FFFFFF;
+          border-radius: 10px;
+          border: solid 2px #00B4CC;
+          padding: 15px;
+          margin: auto;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+          color: black;
+          width: calc(30% - 20px); 
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align:center;
+        }
+       
+        .invoice-info-box h3 {
+          font-size: 1.2rem;
+          margin: 0;
+        }
+        .invoice-info-box ul {
+          list-style: none;
+          padding: 0;
+        }
+        .invoice-info-box li {
+          margin: 5px 0;
+        }
+      </style>
+</head>
+<body>
+  
+  <div class="invoice-info-box">
+    <h3>Car Sales Information</h3>
+    <ul>
+      <li><strong>InvoiceNo:</strong> {{carSalesInfo.InvoiceNo}}</li>
+      <li><strong>Manufacturer:</strong> {{carSalesInfo.Manufacturer}}</li>
+          <li><strong>Model:</strong> {{carSalesInfo.Model}}</li>
+          <li><strong>InvoiceNo:</strong> ${{carSalesInfo.Sales_in_thousands}}</li>
+          <li><strong>Manufacturer:</strong> ${{carSalesInfo.Vehicle_type}}</li>
+          <li><strong>Model:</strong> ${{carSalesInfo.Price_in_thousands}}</li>
+          <li><strong>InvoiceNo:</strong> ${{carSalesInfo.Engine_size}}</li>
+          <li><strong>Manufacturer:</strong> ${{carSalesInfo.Horsepower}}</li>
+          <li><strong>Model:</strong> ${{carSalesInfo.Wheelbase}}</li>
+          <li><strong>Model:</strong> ${{carSalesInfo.Width}}</li>
+          <li><strong>InvoiceNo:</strong> ${{carSalesInfo.Length}}</li>
+          <li><strong>Manufacturer:</strong> ${{carSalesInfo.Curb_weight}}</li>
+          <li><strong>Model:</strong> ${{carSalesInfo.Fuel_capacity}}</li>
+          <li><strong>InvoiceNo:</strong> ${{carSalesInfo.Fuel_efficiency}}</li>
+          <li><strong>Manufacturer:</strong> ${{carSalesInfo.Latest_Launch}}</li>
+          <li><strong>Model:</strong> ${{carSalesInfo.Power_perf_factor}}</li>
+        
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<style>
+  .container {
+    max-width: 1600px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  h2 {
+    font-size: 26px;
+    margin: 20px 0;
+    text-align: center;
+
+    small {
+      font-size: 0.5em;
+    }
+  }
+
+  .col {
+    flex-basis: 15%;
+  }
+
+  tr {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .table-row:hover {
+    background-color: azure;
+
+    transform: scale(1.05);
+
+  }
+
+  .table-header {
+    background-color: rgb(248, 236, 164);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: black;
+  }
+
+  .table-row {
+    background-color: azure;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .highlight {
+    background-color: rgba(16, 16, 16, 0.703);
+    color: azure
+  }
+</style>
+<div class="container">
+  <table class="responsive-table">
+    <thead>
+      <tr class="table-header">
+        <th class="col">Invoice ID</th>
+        <th class="col">Branch</th>
+        <th class="col">City</th>
+        <th class="col">Customer Type</th>
+        <th class="col">Product Line</th>
+        <th class="col">Name</th>
+        <th class="col">Image</th>
+        <th class="col">Unit Price</th>
+        <th class="col">Quantity</th>
+        <th class="col">Tax 5%</th>
+        <th class="col">Total</th>
+        <th class="col">Date</th>
+        <th class="col">Time</th>
+        <th class="col">Payment</th>
+        <th class="col">COGS</th>
+        <th class="col">Gross Income</th>
+        <th class="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each salesData}}
+      {{#if (gt Rating 0)}}
+      {{#if (eq this.Rating 0)}}
+      <tr class="highlight">
+        {{else}}
+      <tr class="table-row">
+        {{/if}}
+        <td class="col">{{getProperty this "Invoice ID"}}</td>
+        <td class="col">{{getProperty this "Branch"}}</td>
+        <td class="col">{{getProperty this "City"}}</td>
+        <td class="col">{{getProperty this "Customer type"}}</td>
+        <td class="col">{{getProperty this "Product line"}}</td>
+        <td class="col">{{getProperty this "name"}}</td>
+        <td class="col"><img src="{{getProperty this " image"}}" alt="Product Image" width="100" height="100"></td>
+        <td class="col">{{getProperty this "Unit price"}}</td>
+        <td class="col">{{getProperty this "Quantity"}}</td>
+        <td class="col">{{getProperty this "Tax 5%"}}</td>
+        <td class="col">{{getProperty this "Total"}}</td>
+        <td class="col">{{getProperty this "Date"}}</td>
+        <td class="col">{{getProperty this "Time"}}</td>
+        <td class="col">{{getProperty this "Payment"}}</td>
+        <td class="col">{{getProperty this "cogs"}}</td>
+        <td class="col">{{getProperty this "gross income"}}</td>
+        <td class="col">{{replaceZero this.Rating}}</td>
+      </tr>
+
+      {{/if}}
+      {{/each}}
+    </tbody>
+  </table>
+</div>

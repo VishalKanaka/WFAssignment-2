@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+        
+
+       
+
+        body {
+            background: #f2f2f2;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .manufacturer-box {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            border: solid 2px #00B4CC;
+            padding: 10px;
+            margin: 10px;
+            margin-left: 3%;
+            color: black;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+            width: calc(20% - 20px); /* Adjust the width as needed */
+            display: inline-block; /* Arrange boxes side by side */
+            vertical-align: top; /* Align boxes at the top */
+        }
+
+        .manufacturer-box:hover {
+            transform: scale(1.1);
+        }
+
+        .manufacturer-box h3 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .manufacturer-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .manufacturer-box li {
+            margin: 5px 0;
+        }
+        </style>
+    </style>
+</head>
+<body>
+    <h1>Cars by Manufacturer: {{enteredMan}}</h1>
+    {{#if matchingCars.length}}
+        {{#each matchingCars}}
+            <div class="manufacturer-box">
+                <h3>Car {{@index}}</h3>
+                <ul>
+                    <li><strong>InvoiceNo:</strong> {{this.InvoiceNo}}</li>
+                    <li><strong>Manufacturer:</strong> {{this.Manufacturer}}</li>
+                    <li><strong>Model:</strong> {{this.Model}}</li>
+                </ul>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No cars found for the manufacturer: {{enteredMan}}</p>
+    {{/if}}
+</body>
+</html>
