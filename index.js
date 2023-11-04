@@ -165,7 +165,7 @@ app.post('/search/Manufacturer', (req, res) => {
     );
   
     if (matchingCars.length > 0) {
-      res.render('SearchManufacturerResult', { matchingCars, enteredMan });
+      res.render('searchManufacturerResult', { matchingCars, enteredMan });
     } else {
       res.status(404).send('No cars found for the manufacturer: ' + enteredMan);
     }
