@@ -149,8 +149,8 @@ app.post('/search/invoiceNo', (req, res) => {
   
   // Step 6
 
-  app.get('/search/Manufacturer', (req, res) => {
-    res.render('searchManufacturerForm');
+app.get('/search/Manufacturer', (req, res) => {
+    res.render('SearchManufacturerForm');
   });
 app.post('/search/Manufacturer', (req, res) => {
     const enteredMan = req.body.Manufacturer;
