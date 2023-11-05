@@ -10,6 +10,9 @@ app.use(bodyParser.json());
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//helper functions 
+
 exphbs.create().handlebars.registerHelper('getProperty', function(object, property) {
     return object[property];
   });
@@ -20,7 +23,7 @@ exphbs.create().handlebars.registerHelper('getProperty', function(object, proper
  
   exphbs.create().handlebars.registerHelper('replaceZero', function (rating, options) {
     if (rating === 0) {
-      return new handlebars.SafeString('<span class="highlight">zero</span>');
+      return new handlebars.SafeString('zero');
     }
     return rating;
   });
@@ -30,9 +33,7 @@ exphbs.create().handlebars.registerHelper('eq', function(a,b) {
   });
   
 
-  app.engine('hbs',exphbs.engine);
-  app.set('view engine', 'hbs');
-  
+ 
 
 
 
@@ -46,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Configure Express to use Handlebars as the view engine
 app.engine('.hbs', exphbs.engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
-
+ 
 // Define a route to render the home page i.e "index"
 app.get('/', function(req, res) {
   res.render('index', { title: 'Contents' });
